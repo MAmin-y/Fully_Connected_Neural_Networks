@@ -1,2 +1,21 @@
-# Fully_Connected_Neural_Networks
-This repo explores Neural Networks &amp; Deep Learning with code for Multi-Layer Perceptrons and comparison between different architectures, Forward-Backward algorithms implementation from scratch, Madaline . It tackles classification (Fashion-MNIST, Wine Quality) &amp; regression (house price prediction) tasks.
+# Fully Connected Neural Networks
+
+Below is an explanation for each part of the project, with separate sections clearly describing what is done.
+
+## Part 1: MLP Design for Fashion-MNIST
+
+In this section, a multi-layer perceptron (MLP) is designed for the Fashion-MNIST dataset. The network is built with one hidden layer that contains 100 neurons using the ReLU activation function. Regularization techniques, including L2 regularization and dropout, are applied to enhance the model's generalization capabilities. The model is trained and then evaluated by generating a confusion matrix (visualized using a heatmap) to analyze the misclassification patterns, such as which classes are most frequently confused and how adjustments to the hidden layer configuration impact overall performance. The rest of this part involves the training and comparison of two distinct network architectures on the Fashion-MNIST dataset. One model incorporates dropout and L2 regularization, while the other model is built without these regularization techniques. The architectures differ primarily in their hidden layer configurations, which allows for an examination of how these differences affect training outcomes. After training, weight histograms for each model’s hidden layers are plotted to observe the distribution of learned parameters. Additionally, various optimization algorithms (like Adam, Nadam, and RMSprop) are compared in terms of convergence speed and accuracy. Hyperparameter tuning is conducted using both random and Bayesian search methods to identify the best model configuration.
+
+## Part 2: Simple Neural Network and Wine Quality Prediction
+
+In this segment, a simple neural network with one hidden layer is implemented from scratch. The hidden layer uses a hyperbolic tangent activation function, and the output layer employs the squared error loss function. The project details both the forward pass and backpropagation routines, providing a fundamental understanding of network training. The network is then tested on the UCI Wine Quality dataset, where data preprocessing includes standardizing features (using only the training set statistics) and appending a bias term. Training is performed over several iterations with varying learning rates, and performance is evaluated using the root mean squared error (RMSE). Training error curves are plotted to visualize the progression of the model's learning.
+
+## Part 3: Madaline Algorithm Implementation
+
+This part focuses on the Madaline algorithm, starting with a brief theoretical overview of the MRII/MRI algorithms. The project includes the generation of a scatter plot from a provided CSV dataset to visualize the data distribution. A Madaline network is then trained on this data using varying numbers of neurons, and decision boundaries for each configuration are plotted separately. The analysis involves comparing the classification accuracy and the convergence rate (in terms of epochs) for each setup. This evaluation provides insights into how different network configurations influence the model’s overall performance and decision-making capabilities.
+
+## Part 4: House Price Prediction Using MLP
+
+The final section addresses house price prediction using an MLP. Initially, the dataset is explored to assess missing values and to compute the correlation matrix, identifying the feature most closely related to the house prices. Data preprocessing involves converting a date column into separate month and year features (which are then removed), and scaling the features based solely on the training set to avoid data leakage. Two MLP architectures are implemented: one with a single hidden layer and another with two hidden layers. Both models are trained using appropriate optimizers and loss functions. Training and validation loss curves are plotted across epochs, and a final comparison determines the best-performing model. This best model is then used to make predictions on random samples from the validation set, demonstrating its effectiveness in predicting house prices.
+
+Each part is organized into its own self-contained module, complete with notebooks or scripts that detail the implementation, analysis, and visualization steps.
